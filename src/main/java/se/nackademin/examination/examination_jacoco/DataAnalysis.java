@@ -11,7 +11,7 @@ public class DataAnalysis {
 		resultString+="\n";
 		resultString += getResulStringHomecityAndAge(values);
 		
-		return resultString;
+		return resultString; 
 	}	
 	
 	
@@ -40,6 +40,7 @@ public class DataAnalysis {
 				return "The name of the homecity is big and the participant is 30 or older";
 			}else{
 				return "The name of the homecity is big and the participant is younger than 30";
+				
 			}
 			
 		}
