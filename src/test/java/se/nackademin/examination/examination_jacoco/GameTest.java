@@ -17,7 +17,8 @@ public class GameTest {
 		Conversor conversor = new Conversor();	
 		
 		game.buildFinalString("Tom", "Jerry", resultFromInputs, conversor);
-		game.collectInputData();
+		ArrayList<String> testValues = new ArrayList<String>();	
+		//testValues = game.collectInputData();
 		
 		game.runGame("Test", "Tom", "Jerry", 'F', 20, "stockholm");
 		
