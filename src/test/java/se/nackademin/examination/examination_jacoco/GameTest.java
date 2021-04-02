@@ -11,12 +11,14 @@ public class GameTest {
 
 	@Test
 	public void testMethod1() {
+		
 		Game game = new Game();
 		ResultFromInputs resultFromInputs = new ResultFromInputs();
-		Conversor conversor = new Conversor();
+		Conversor conversor = new Conversor();	
 		
 		game.buildFinalString("Tom", "Jerry", resultFromInputs, conversor);
 		game.collectInputData();
+		
 		game.runGame("Test", "Tom", "Jerry", 'F', 20, "stockholm");
 		
 		ArrayList<String> valuesList = new ArrayList<String>(); 

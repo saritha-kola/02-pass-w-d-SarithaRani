@@ -5,6 +5,12 @@
 	<groupId>se.nackademin.examination</groupId>
 	<artifactId>examination-jacoco</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	<properties>
+    <junit.version>4.12</junit.version>
+		<java.version>1.8</java.version>
+		<jacoco.version>0.7.7.201606060606</jacoco.version>
+  </properties>
 
 	<dependencies>
 		<dependency>
@@ -14,4 +20,46 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<build>
+    <plugins>
+      <!-- Maven complier plugin -->
+      <plugin>
+        <artifactId>maven-complier-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+        <source>${java.version}</source>
+        <target>${java.version}</target>
+        </configuration>
+        </plugin>
+        
+        <!-- adding the jacoco maven plugin and congiguring the execution to generate reports -->
+        <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco.version}</version>
+        
+        <executions>
+            <execution>
+                <id>jacoco-initialize</id>
+                <goals>
+                    <goal>prepare-agent</goal>
+                </goals>
+            </execution>
+            <execution>
+                <id>jacoco-report</id>
+                <phase>test</phase>
+                <goals>
+                    <goal>report</goal>
+                </goals>
+                <!-- default target/jacoco/site/* -->
+                <configuration>
+                    <outputDirectory>target/jacoco-report</outputDirectory>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+     </plugins>
+     </build>
+
 </project>

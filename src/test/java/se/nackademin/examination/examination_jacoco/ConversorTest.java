@@ -8,6 +8,7 @@ public class ConversorTest {
 
 	@Test
 	public void testConversor() {
+		Game game = new Game();
 		Conversor conversor = new Conversor();
 		conversor.setNameConverterArrayValues();
 		conversor.setAgeConverterArrayValues();
